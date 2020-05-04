@@ -33,7 +33,7 @@ public class IssueController {
         return issueService.add(issueEntity);
     }
 	
-	@PutMapping(value = "/update-issue/{id}")
+	@PutMapping(value = "/update-issue")
 	@ResponseStatus(value = HttpStatus.OK)
     public IssueEntity update(@RequestBody @Valid IssueRequests.UpdateIssueRequest updateIssueRequest) {
 		return issueService.update(updateIssueRequest);
