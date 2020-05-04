@@ -19,8 +19,11 @@ import java.util.Set;
 @Service
 public class IssueService {
 	
-	@Autowired
 	private IssueDao issueDao;
+
+	public IssueService(IssueDao issueDao) {
+		this.issueDao = issueDao;
+	}
 
 	private static Map<BugStatus, Set<BugStatus>> BUG_STATE_TRANSITIONS = configureStorefrontPublicationStateTransitions();
 	
