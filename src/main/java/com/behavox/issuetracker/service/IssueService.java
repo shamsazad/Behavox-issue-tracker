@@ -22,7 +22,7 @@ public class IssueService {
 	@Autowired
 	private IssueDao issueDao;
 
-	private static Map<BugStatusEnum, Set<BugStatusEnum>> BUG_STATE_TRANSITIONS = configureStorefrontPublicationStateTransitions();
+	private static Map<BugStatus, Set<BugStatus>> BUG_STATE_TRANSITIONS = configureStorefrontPublicationStateTransitions();
 	
 	public List<IssueEntity> getBugs(){
 		return issueDao.findAll();
@@ -55,14 +55,14 @@ public class IssueService {
 		return issueDao.getOne(bugId);
 	}
 
-	private static Map<BugStatusEnum, Set<BugStatusEnum>> configureStorefrontPublicationStateTransitions() {
-		Map<BugStatusEnum, Set<BugStatusEnum>> map = new HashMap<>();
+	private static Map<BugStatus, Set<BugStatus>> configureStorefrontPublicationStateTransitions() {
+		Map<BugStatus, Set<BugStatus>> map = new HashMap<>();
 
-		StateChanges.addAsValid(map, BugStatusEnum.OPEN, BugStatusEnum.RESOLVED, BugStatusEnum.IN_PROGRESS, BugStatusEnum.CLOSED);
-		StateChanges.addAsValid(map, BugStatusEnum.IN_PROGRESS, BugStatusEnum.CLOSED, BugStatusEnum.RESOLVED);
-		StateChanges.addAsValid(map, BugStatusEnum.RESOLVED, BugStatusEnum.CLOSED, BugStatusEnum.RE_OPEN);
-		StateChanges.addAsValid(map, BugStatusEnum.CLOSED, BugStatusEnum.RE_OPEN);
-		StateChanges.addAsValid(map, BugStatusEnum.RE_OPEN, BugStatusEnum.IN_PROGRESS, BugStatusEnum.CLOSED, BugStatusEnum.RESOLVED);
+		StateChanges.addAsValid(map, BugStatus.OPEN, BugStatus.RESOLVED, BugStatus.IN_PROGRESS, BugStatus.CLOSED);
+		StateChanges.addAsValid(map, BugStatus.IN_PROGRESS, BugStatus.CLOSED, BugStatus.RESOLVED, BugStatus.OPEN);
+		StateChanges.addAsValid(map, BugStatus.RESOLVED, BugStatus.CLOSED, BugStatus.RE_OPEN);
+		StateChanges.addAsValid(map, BugStatus.CLOSED, BugStatus.RE_OPEN);
+		StateChanges.addAsValid(map, BugStatus.RE_OPEN, BugStatus.IN_PROGRESS, BugStatus.CLOSED, BugStatus.RESOLVED);
 		return map;
 	}
 }

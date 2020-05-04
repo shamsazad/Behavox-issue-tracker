@@ -10,35 +10,35 @@ import java.util.Date;
 @Entity
 public class IssueEntity extends IssuesBase {
 	
-	private IssueTypeEnum issueType;
+	private IssueType issueType;
 	
-	private BugStatusEnum status;
+	private BugStatus status;
 	
-	private IssuePriorityEnum priority;
+	private IssuePriority priority;
 
 	private Date updatedAt;
 	
-	public BugStatusEnum getStatus() {
+	public BugStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(BugStatusEnum status) {
+	public void setStatus(BugStatus status) {
 		this.status = status;
 	}
 
-	public IssuePriorityEnum getPriority() {
+	public IssuePriority getPriority() {
 		return priority;
 	}
 
-	public void setPriority(IssuePriorityEnum priority) {
+	public void setPriority(IssuePriority priority) {
 		this.priority = priority;
 	}
 
-	public IssueTypeEnum getIssueType() {
+	public IssueType getIssueType() {
 		return issueType;
 	}
 
-	public void setIssueType(IssueTypeEnum issueType) {
+	public void setIssueType(IssueType issueType) {
 		this.issueType = issueType;
 	}
 

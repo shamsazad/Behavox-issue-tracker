@@ -18,7 +18,7 @@ public class IssuesBase extends BaseEntity {
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")
-	private User userId;
+	private User assignedUser;
 	
 	public String getTitle() {
 		return title;
@@ -44,11 +44,11 @@ public class IssuesBase extends BaseEntity {
 		this.creationDate = creationDate;
 	}
 
-	public User getUserId() {
-		return userId;
+	public User getAssignedUser() {
+		return assignedUser;
 	}
 
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setAssignedUser(User userId) {
+		this.assignedUser = userId;
 	}
 }

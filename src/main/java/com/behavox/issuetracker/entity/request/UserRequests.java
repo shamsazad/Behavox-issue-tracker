@@ -1,7 +1,7 @@
 package com.behavox.issuetracker.entity.request;
 
 import com.behavox.issuetracker.entity.base.BaseEntity;
-import com.behavox.issuetracker.enums.UserProfileEnum;
+import com.behavox.issuetracker.enums.UserProfile;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
@@ -18,7 +18,7 @@ public class UserRequests {
         private String name;
 
         @NotNull
-        private UserProfileEnum profile;
+        private UserProfile profile;
 
         public String getName() {
             return name;
@@ -28,11 +28,11 @@ public class UserRequests {
             this.name = name;
         }
 
-        public UserProfileEnum getProfile() {
+        public UserProfile getProfile() {
             return profile;
         }
 
-        public void setProfile(UserProfileEnum profile) {
+        public void setProfile(UserProfile profile) {
             this.profile = profile;
         }
     }
@@ -45,7 +45,7 @@ public class UserRequests {
         private Integer id;
 
         @NotNull
-        private UserProfileEnum profile;
+        private UserProfile profile;
 
         public Integer getId() {
             return id;
@@ -55,11 +55,11 @@ public class UserRequests {
             this.id = id;
         }
 
-        public UserProfileEnum getProfile() {
+        public UserProfile getProfile() {
             return profile;
         }
 
-        public void setProfile(UserProfileEnum profile) {
+        public void setProfile(UserProfile profile) {
             this.profile = profile;
         }
     }

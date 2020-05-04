@@ -27,8 +27,8 @@ public class SwaggerConfig {
     
     private ApiInfo apiInfo() {
         ApiInfo apiInfo = new ApiInfo(
-          "Rest Api Issue Tracker Documentation",
-          "Applicant Test Task: Design of a REST API",
+          "RestFul Api Issue Tracker",
+          "Track issues assigned to developers",
           "",
           "",
           "<shamsazad@gmail.com>",

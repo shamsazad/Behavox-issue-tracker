@@ -2,9 +2,9 @@ package com.behavox.issuetracker.entity.request;
 
 import com.behavox.issuetracker.entity.User;
 import com.behavox.issuetracker.entity.base.BaseEntity;
-import com.behavox.issuetracker.enums.BugStatusEnum;
-import com.behavox.issuetracker.enums.IssuePriorityEnum;
-import com.behavox.issuetracker.enums.IssueTypeEnum;
+import com.behavox.issuetracker.enums.BugStatus;
+import com.behavox.issuetracker.enums.IssuePriority;
+import com.behavox.issuetracker.enums.IssueType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
@@ -21,10 +21,10 @@ public class IssueRequests {
         private String description;
 
         @NotNull
-        private IssueTypeEnum issueType;
+        private IssueType issueType;
 
         @NotNull
-        private IssuePriorityEnum issuePriorityEnum;
+        private IssuePriority issuePriority;
 
         @NotNull
         private String title;
@@ -39,20 +39,20 @@ public class IssueRequests {
             this.description = description;
         }
 
-        public IssueTypeEnum getIssueType() {
+        public IssueType getIssueType() {
             return issueType;
         }
 
-        public void setIssueType(IssueTypeEnum issueType) {
+        public void setIssueType(IssueType issueType) {
             this.issueType = issueType;
         }
 
-        public IssuePriorityEnum getIssuePriorityEnum() {
-            return issuePriorityEnum;
+        public IssuePriority getIssuePriority() {
+            return issuePriority;
         }
 
-        public void setIssuePriorityEnum(IssuePriorityEnum issuePriorityEnum) {
-            this.issuePriorityEnum = issuePriorityEnum;
+        public void setIssuePriority(IssuePriority issuePriority) {
+            this.issuePriority = issuePriority;
         }
 
         public User getUser() {
@@ -83,9 +83,9 @@ public class IssueRequests {
 
         private Integer developerId;
 
-        private BugStatusEnum status;
+        private BugStatus status;
 
-        private IssuePriorityEnum issuePriorityEnum;
+        private IssuePriority issuePriority;
 
         private User user;
 
@@ -113,20 +113,20 @@ public class IssueRequests {
             this.developerId = developerId;
         }
 
-        public BugStatusEnum getStatus() {
+        public BugStatus getStatus() {
             return status;
         }
 
-        public void setStatus(BugStatusEnum status) {
+        public void setStatus(BugStatus status) {
             this.status = status;
         }
 
-        public IssuePriorityEnum getIssuePriorityEnum() {
-            return issuePriorityEnum;
+        public IssuePriority getIssuePriority() {
+            return issuePriority;
         }
 
-        public void setIssuePriorityEnum(IssuePriorityEnum issuePriorityEnum) {
-            this.issuePriorityEnum = issuePriorityEnum;
+        public void setIssuePriority(IssuePriority issuePriority) {
+            this.issuePriority = issuePriority;
         }
 
         public User getUser() {

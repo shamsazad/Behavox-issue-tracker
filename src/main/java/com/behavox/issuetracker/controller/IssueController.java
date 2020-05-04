@@ -6,6 +6,7 @@ import com.behavox.issuetracker.service.IssueService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -28,13 +29,13 @@ public class IssueController {
 	
 	@PostMapping(value = "/create-issue")
 	@ResponseStatus(value = HttpStatus.CREATED)
-    public IssueEntity create(@RequestBody @NotNull IssueRequests.CreateIssueRequest issueEntity) {
+    public IssueEntity create(@RequestBody @Valid IssueRequests.CreateIssueRequest issueEntity) {
         return issueService.add(issueEntity);
     }
 	
 	@PutMapping(value = "/update-issue/{id}")
 	@ResponseStatus(value = HttpStatus.OK)
-    public IssueEntity update(@RequestBody @NotNull IssueRequests.UpdateIssueRequest updateIssueRequest) {
+    public IssueEntity update(@RequestBody @Valid IssueRequests.UpdateIssueRequest updateIssueRequest) {
 		return issueService.update(updateIssueRequest);
     }
 

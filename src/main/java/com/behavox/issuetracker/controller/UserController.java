@@ -6,6 +6,7 @@ import com.behavox.issuetracker.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
@@ -27,13 +28,13 @@ public class UserController {
 
   @PostMapping(value = "/create-user")
   @ResponseStatus(value = HttpStatus.CREATED)
-  public User create(@RequestBody @NotNull UserRequests.CreateUserRequest createUserRequest) {
+  public User create(@RequestBody @Valid UserRequests.CreateUserRequest createUserRequest) {
     return userService.add(createUserRequest);
   }
 
-  @PutMapping(value = "/update-user/{id}")
+  @PutMapping(value = "/update-user")
   @ResponseStatus(value = HttpStatus.OK)
-  public User update(@RequestBody UserRequests.UpdateUserRequest updateUserRequest) {
+  public User update(@RequestBody @Valid UserRequests.UpdateUserRequest updateUserRequest) {
     return userService.update(updateUserRequest);
   }
 

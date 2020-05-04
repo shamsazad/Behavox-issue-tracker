@@ -1,7 +1,7 @@
 package com.behavox.issuetracker.entity;
 
 import com.behavox.issuetracker.entity.base.BaseEntity;
-import com.behavox.issuetracker.enums.UserProfileEnum;
+import com.behavox.issuetracker.enums.UserProfile;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
@@ -12,7 +12,7 @@ public class User extends BaseEntity {
   @NotNull
   private String name;
   @NotNull
-  private UserProfileEnum profile;
+  private UserProfile profile;
 
   public String getName() {
     return name;
@@ -22,11 +22,11 @@ public class User extends BaseEntity {
     this.name = name;
   }
 
-  public UserProfileEnum getProfile() {
+  public UserProfile getProfile() {
     return profile;
   }
 
-  public void setProfile(UserProfileEnum profileEnum) {
+  public void setProfile(UserProfile profileEnum) {
     this.profile = profileEnum;
   }
 }

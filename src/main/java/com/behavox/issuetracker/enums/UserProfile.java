@@ -1,6 +1,6 @@
 package com.behavox.issuetracker.enums;
 
-public enum UserProfileEnum {
+public enum UserProfile {
 
     DEVELOPER,
     QUALITY_ANALYST,
