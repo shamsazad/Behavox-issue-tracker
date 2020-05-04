@@ -7,7 +7,6 @@ import com.behavox.issuetracker.enums.*;
 import com.behavox.issuetracker.exception.InvalidStateTransitionOfBug;
 import com.behavox.issuetracker.util.IssueMapper;
 import com.behavox.issuetracker.util.StateChanges;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -25,7 +24,7 @@ public class IssueService {
 		this.issueDao = issueDao;
 	}
 
-	private static Map<BugStatus, Set<BugStatus>> BUG_STATE_TRANSITIONS = configureStorefrontPublicationStateTransitions();
+	private static Map<BugStatus, Set<BugStatus>> BUG_STATE_TRANSITIONS = configureWorkflowStateTransitions();
 	
 	public List<IssueEntity> getBugs(){
 		return issueDao.findAll();
@@ -58,7 +57,7 @@ public class IssueService {
 		return issueDao.getOne(bugId);
 	}
 
-	private static Map<BugStatus, Set<BugStatus>> configureStorefrontPublicationStateTransitions() {
+	private static Map<BugStatus, Set<BugStatus>> configureWorkflowStateTransitions() {
 		Map<BugStatus, Set<BugStatus>> map = new HashMap<>();
 
 		StateChanges.addAsValid(map, BugStatus.OPEN, BugStatus.RESOLVED, BugStatus.IN_PROGRESS, BugStatus.CLOSED);
