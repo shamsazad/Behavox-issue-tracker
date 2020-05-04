@@ -11,7 +11,11 @@ can't assign issue to users if they are not created beforehand.
 
 # Getting Started
 To run this program, please install maven.
+To run locally, clone the `repository` and you can use either `terminal` or any `IDEA`.
+
+To run on terminal, ```mvn spring-boot:run```
 ### Swagger endpoints:
+Once you run the program, you can check the
 [Swagger end-points](http://localhost:8080/swagger-ui.html#/)
 
 
